@@ -11,14 +11,24 @@ Download and extract the [Snappy source distribution](http://snappy.googlecode.c
 
 3. To build a static 32 bit lib, run: 
 
-    setenv /x86
-    msbuild.exe /p:Configuration=Release /p:Platform=Win32 /p:Snappy=..\snappy-1.0.5
+      setenv /x86
+      msbuild.exe /p:Configuration=Release /p:Platform=Win32 /p:Snappy=..\snappy-1.0.5
 
 4. To build a static 64 bit lib, run: 
 
+      setenv /x64
+      msbuild.exe /p:Configuration=Release /p:Platform=x64 /p:Snappy=..\snappy-1.0.5
+
+
+## Building the Benchmark
+
+    setenv /x86
+    msbuild.exe /p:Configuration=Benchmark /p:Platform=Win32 /p:Snappy=..\snappy-1.0.5
+	Benchmark\leveldb.exe
+
+or for x64: 
+
     setenv /x64
-    msbuild.exe /p:Configuration=Release /p:Platform=x64 /p:Snappy=..\snappy-1.0.5
-
-
-
+    msbuild.exe /p:Configuration=Benchmark /p:Platform=x64 /p:Snappy=..\snappy-1.0.5
+    x64\Benchmark\leveldb.exe
 
